@@ -1,0 +1,49 @@
+<div [ngClass]="alerta" class="alert mt-5" role="alert">
+  Esta alerta cambia de clase al presionar boton
+</div>
+
+<button class="btn btn-danger" (click)="alerta = 'alert-danger'">
+  Alerta Roja
+</button>
+
+<button class="btn btn-warning m-2" (click)="alerta = 'alert-warning'">
+  Alerta Amarilla
+</button>
+<br />
+
+<h1
+  class="mt-5"
+  [ngClass]="{
+    'text-center': alignCenter.direction,
+    'text-right': !alignCenter.direction
+  }"
+>
+  &larr; Texto &rarr;
+</h1>
+
+<button
+  class="btn btn-secondary"
+  (click)="alignCenter.direction = !alignCenter.direction"
+>
+  Cambiar alineacion con clases.
+</button>
+
+<br /><br />
+
+<div class="row mt-5">
+
+  <h3 appAppResaltado>Procesos Asincrono</h3>
+  <button class="btn btn-primary">Guardar Cambios</button>
+
+</div>
+
+<!-- 
+<button class="btn btn-primary"
+ (click)="ejecutar()"
+ [disabled]="loading"
+ 
+ <i [ngClass]="{ 'fa-save': !loading, 'fa-refresh fa-spin': loading }"></i>
+ <span [ngIf]="!loading">Guadar cambios</span>
+ <span [ngIf]="!loading">Guadardando cambios</span>
+</button> 
+-->
